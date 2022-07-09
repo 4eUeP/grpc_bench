@@ -1,4 +1,4 @@
-FROM haskell:8.10.4
+FROM haskell:8.10.7
 
 COPY haskell_mu_bench /app/haskell_mu_bench
 COPY proto /app/proto

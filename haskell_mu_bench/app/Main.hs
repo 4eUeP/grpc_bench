@@ -26,7 +26,7 @@ type HelloRequest = Term HelloWorld (HelloWorld :/: "HelloRequest")
 type HelloReply = Term HelloWorld (HelloWorld :/: "HelloReply")
 
 sayHello :: MonadServer m => HelloRequest -> m HelloReply
-sayHello req = pure $ record1 (req ^. #name)
+sayHello req = pure $ record1 (req ^. #request)
 
 greeterServer :: MonadServer m => SingleServerT info Greeter  m _
 greeterServer = singleService (method @"SayHello" sayHello)
