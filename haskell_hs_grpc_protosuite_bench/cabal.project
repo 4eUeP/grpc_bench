@@ -1,0 +1,21 @@
+source-repository-package
+    type: git
+    location: https://github.com/4eUeP/hs-grpc.git
+    tag: 1e16917a94b02601314f927a3ff9a62c3ea8ba83
+    subdir: hs-grpc-server
+
+package hs-grpc-server
+  flags: +hsgrpc_use_protosuite
+  tests: false
+
+source-repository-package
+    type: git
+    location: https://github.com/awakesecurity/proto3-suite.git
+    tag: 5beaf4ab206b5c82a2161dd0850e91b3663135ec
+
+package proto3-suite
+  flags: -swagger
+  tests: false
+
+packages:
+  ./hs-grpc-protosuite-bench.cabal
